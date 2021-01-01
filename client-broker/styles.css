@@ -1,0 +1,157 @@
+:root {
+  --primary: #1d49e2;
+  --secondary: #dedede80;
+  --white: #ffffff;
+  --shadow: #0000004d;
+  --connected: #32c787;
+  --notConnected: #ff5652;
+}
+.connected {
+  background-color: var(--connected);
+}
+.not-connected {
+  background-color: var(--notConnected);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  color: var(--primary);
+}
+
+input {
+  border-radius: 5px;
+  width: 18.75em;
+  height: 2.5em;
+}
+
+label {
+  display: block;
+  color: var(--primary);
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+
+button {
+  background-color: var(--primary) !important;
+  color: var(--white);
+  border-radius: 5px;
+  width: 8.25em;
+  height: 2.5em;
+}
+
+.root {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+.container-file {
+  display: grid;
+}
+.inputfile-box {
+  width: 90%;
+  background-color: var(--secondary);
+  padding: 1.5%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0 0 20px #0000004d; */
+  position: relative;
+}
+.inputfile {
+  display: none;
+}
+.file-box {
+  background-color: var(--white);
+  display: inline-block;
+  width: 60%;
+  border: 1px solid;
+  /* padding: 5px 0px 5px 5px; */
+  box-sizing: border-box;
+  height: 2em;
+
+  margin-right: 1em;
+}
+
+.file-button {
+  background: var(--primary) !important;
+  padding: 1px;
+  /* position: absolute; */
+  color: var(--white);
+  border: 1px solid;
+  margin: 0 0.4em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 30%;
+  /* top: 0px; */
+  /* right: 0px; */
+}
+
+.button {
+  background-color: var(--primary) !important;
+  height: 2.5em;
+  width: 30%;
+}
+
+.container-row-files {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+.row-reload {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4% 0;
+  /* align-items: center; */
+}
+
+.container-files {
+  box-shadow: 0 0 20px var(--shadow);
+  background-color: var(--white);
+  display: flex;
+}
+.files-area {
+}
+
+.files-received {
+  position: relative;
+}
+.files-received i {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 42px;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.files-area-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10em;
+}

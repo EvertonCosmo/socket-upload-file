@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket Cliente</title>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
+ 
+</head>
+<body>
+  <script defer src="./main.js" ></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.min.js" integrity="sha512-5yJ548VSnLflcRxWNqVWYeQZnby8D8fJTmYRLyvs445j1XmzR8cnWi85lcHx3CUEeAX+GrK3TqTfzOO6LKDpdw==" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <div class="container root"> 
+      <div class="row" style="margin:3% 0" > 
+            <h1>Socket Cliente</h1>
+      </div>
+
+      <div style="display: flex; flex-direction: row; justify-content: center; width:90%;">
+        <div id='connect' style="margin-bottom: 3%;"  class="row " >
+          <h3 id="conected-text">conectando...</h3>
+      </div>
+      
+      <form id="userForm" style="margin-left: 2.1em; padding:0  "> 
+          <button  class="btn btn-primary" type="submit"> 
+            conectar
+          </button>
+      </form>
+      </div>
+    
+   
+    </button> 
+      <div class="row inputfile-box"> 
+        <label  style="font-weight: 600">
+          
+          Selecione um arquivo:
+        
+        </label>
+        <div class="container-file"> 
+          <input class="inputfile" type="file"
+          onchange="selectFile(this)"
+          id="upload"
+          accept="image/png, image/jpeg, application/pdf">
+
+          
+          <label for="upload" style="display: flex; align-items: center;"  style="font-weight: 600">
+              <span id="file-name" class="file-box"  ></span>
+
+              <span class="file-button btn btn-primary"> 
+                  <i class="fas fa-upload" style="margin-right: 0.2em;" aria-hidden="true"></i>
+                  Selecionar
+              </span>
+              <button onclick="sendMessage()" class="file-button btn btn-primary" aria-hidden="true">Enviar</button>
+          </label>
+        </div>
+        
+       
+      </div> 
+      
+      
+      <div class="row container-row-files" >
+      
+            <div class="row-reload"> 
+              
+                  <h2 style="font-size: 1.2em">Arquivos do Servidor</h2>
+                  <button onclick="sycronize()" class=" button btn btn-primary"> <i class="fas fa-sync"></i> Recarregar</button>
+
+            </div>
+
+            <div id="filesContainer" class="container-files">
+                  <ul id='fileArea'> 
+
+
+                  </ul>
+
+            </div> 
+       
+      </div>
+
+
+  </div>
+
+
+  
+</body>
+
+
+
+</html>
